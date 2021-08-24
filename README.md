@@ -1,4 +1,4 @@
-### 说明（Description)
+### 说明
 本文档是Shareit-Publiser的对接说明。对接协议采用openrtb 2.5协议。
 
 中文文档请求参考 [SHAREit-Publisher接入文档.md](https://github.com/shareitads/openrtb/blob/main/SHAREit-Publisher%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3.md)
