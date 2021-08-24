@@ -124,7 +124,7 @@ This document provides instructions for the integration of SHAREit Midas system 
 
  
 
-# Steps for Integration
+# 2 Steps for Integration
 
 To enable Publisher to connect with Midas, the steps include:
 
