@@ -153,7 +153,7 @@ HTTP POST mode is used to send Bid Request, instead of HTTP GET mode, as it enab
 Request thread：
 
 |Name|Value|Remark|
-|:----|:----|:----|:----|:----|:----|
+|:----|:----|:----|
 |x-openrtb-version|2.5|open rtb version|
 
 ## 3.3 HTTP Response
