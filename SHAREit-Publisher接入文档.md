@@ -241,7 +241,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 ### 4.1.3 native request object
 
 |**参数名称**|**类型**|**是否必传**|**描述**|
-|:----|:----|:----|:----|:----|
+|:----|:----|:----|:----|
 |assets|object array|是|通过 Asset object 表示 native 流量对素材和其他要素的要求；广告返回的素材和其他要素必须符合该 object 要求；|
 |ver|string|是|Native 标签协议版本（Native Markupversion）；默认值为 1.2;|
 |context|integer|否|广告场景；枚举值参考 5.10 Context Type IDs|
