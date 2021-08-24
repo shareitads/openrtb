@@ -1,4 +1,4 @@
-**SHAREit-Publisher RTB I****n****t****eg****r****atio****n**
+**SHAREit-Publisher RTB Integration**
 
 Table of Content
 
@@ -8,126 +8,123 @@ Table of Content
 
 3 Real Time Bid
 
-3.1 Data Transmission
+​	3.1 Data Transmission
 
-3.2 HTTP Request
+​	3.2 HTTP Request
 
-3.3 HTTP Response
+​	3.3 HTTP Response
 
-3.4 Display Volume and Cost Calculation
+​	3.4 Display Volume and Cost Calculation
 
 4 Real Time Bid RTB Interface Parameter
 
-4.1 Bid Request
+​	4.1 Bid Request
 
-4.1.1 imp object
+​		4.1.1 imp object
 
-4.1.2 native object
+​		4.1.2 native object
 
-4.1.3 native request object
+​		4.1.3 native request object
 
-4.1.4 asset request object
+​		4.1.4 asset request object
 
-4.1.5 title object
+​		4.1.5 title object
 
-4.1.6 img object
+​		4.1.6 img object
 
-4.1.7 video object
+​		4.1.7 video object
 
-4.1.8 data object
+​		4.1.8 data object
 
-4.1.9 app object
+​		4.1.9 app object
 
-4.1.10 publisher object
+​		4.1.10 publisher object
 
-4.1.11 device object
+​		4.1.11 device object
 
-4.1.12 geo object
+​		4.1.12 geo object
 
-4.1.13 user object
+​		4.1.13 user object
 
-4.1.14 data object
+​		4.1.14 data object
 
-4.1.15 segment object
+​		4.1.15 segment object
 
 4.2 Bid Response
 
-4.2.1 seatbid object
+​		4.2.1 seatbid object
 
-4.2.2 bid object
+​		4.2.2 bid object
 
-4.2.3 native ad response
+​		4.2.3 native ad response
 
-4.2.4 asset response object
+​		4.2.4 asset response object
 
-4.2.5 title object
+​		4.2.5 title object
 
-4.2.6 Img object
+​		4.2.6 Img object
 
-4.2.7 data object
+​		4.2.7 data object
 
-4.2.8 video object
+​		4.2.8 video object
 
-4.2.9 link object
+​		4.2.9 link object
 
 5 RTB Interface Enumerated Value List
 
-5.1 IAB Category Enumerated Value
+​	5.1 IAB Category Enumerated Value
 
-5.2 Banner Ad Type Enumerated Value
+​	5.2 Banner Ad Type Enumerated Value
 
-5.3 Creative Attribute Enumerated Value
+​	5.3 Creative Attribute Enumerated Value
 
-5.4 API Frame Enumerated Value
+​	5.4 API Frame Enumerated Value
 
-5.5 Ad Placement / Position Attribute Enumerated Value
+​	5.5 Ad Placement / Position Attribute Enumerated Value
 
-5.6 Video Bid Response Protocol Enumerated Value
+​	5.6 Video Bid Response Protocol Enumerated Value
 
-5.7 Device Type Enumerated Value
+​	5.7 Device Type Enumerated Value
 
-5.8 Network Connection Mode Enumerated Value
+​	5.8 Network Connection Mode Enumerated Value
 
-5.9 IQG Media Rating Enumerated Value
+​	5.9 IQG Media Rating Enumerated Value
 
-5.10 Context Type IDs
+​	5.10 Context Type IDs
 
-5.11 Context Sub Type IDs
+​	5.11 Context Sub Type IDs
 
-5.12 Data Asset Type
+​	5.12 Data Asset Type
 
-5.13 Location Type
+​	5.13 Location Type
 
-5.14 IP Location Services
+​	5.14 IP Location Services
 
 RTB Request Example 
 
-1a) native icon image request example 
+​	1a) native icon image request example 
 
-1b) native large image request example
+​	1b) native large image request example
 
-1c) native video image request example
+​	1c) native video image request example
 
 RTB Response Example
 
-2a) native icon image request example 
+​	2a) native icon image request example 
 
-2b) native large image request example
+​	2b) native large image request example
 
-2c) native video image request example
+​	2c) native video image request example
 
 
 
----
-# 
-
-# **1****O****v****e****r****vie****w**
+# 1 Overview
 
 This document provides instructions for the integration of SHAREit Midas system with external Publisher system. It describes the requirements and steps needed to enable interface connection based on open RTB.
 
  
 
-# **2 St****eps****f****or********I****n****tegratio****n**
+# Steps for Integration
 
 To enable Publisher to connect with Midas, the steps include:
 
@@ -139,7 +136,7 @@ To enable Publisher to connect with Midas, the steps include:
 
  
 
-# **3 R****e****al********Ti****me****Bi****d**
+# 3 Real Time Bid
 
 ## 3.1 Data Transmission
 
@@ -175,20 +172,20 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 
  
 
-# **4 Real Time Bid RTB Interface Parameter**
+# 4 Real Time Bid RTB Interface Parameter 
 
 ## 4.1 Bid Request
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |id|string|Yes|The only identification for Bid Request|
-|imp|object array|Yes|1 request can include only 1 impression object at a time, which represents a specific ad display placement/position. <br>Details can be found in **imp object** parameter definition below|
+|imp|object array|Yes|1 request can include only 1 impression object at a time, which represents a specific ad display placement/position. Details can be found in **imp object** parameter definition below|
 |app|object |Yes|App object info of Publisher, recommended to use only on app instead of website. Details can be found in **app object** parameter definition below|
 |device|object|Yes|Device info. Details can be found in **device object** parameter definition below|
 |user|object|No|Device user / Ad audience. Details can be found in **user object** parameter definition below|
 |at|integer|Yes|Bid settlement auction type. Value of 1 means it follows First-price auction, while value of 2 means it follows Second-price plus auction.|
 |badv|string array|No|Domain name in blacklist|
-|bapp|string array|No|App name in blacklist.<br>On Android, these should be bundle or package names (e.g., com.foo.mygame). On iOS, these are numeric IDs.|
+|bapp|string array|No|App name in blacklist.On Android, these should be bundle or package names (e.g., com.foo.mygame). On iOS, these are numeric IDs.|
 |regs|object|No|Any industry, legal, or governmental regulations in force|
 
 ### 4.1.1 imp object
@@ -201,8 +198,8 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |banner|object|Yes for Banner traffic|Refer to **banner object**|
 |video|object|Yes for Video traffic|Refer to **video object**|
 |audio|object|Yes for Audio traffic|Refer to **audio object**|
-|exp|integer|No|Duration that may elapse between the auction and the actual display / impression.<br>Unit is in seconds|
-|secure|integer|No|Parameter to indicate if Bid Request needs HTTPS encrypted info and markup to ensure data privacy.<br>Value of 0 means it doesn't need. Value of 1 means it needs. If left blank, means unknown, i.e. it doesn't need encryption|
+|exp|integer|No|Duration that may elapse between the auction and the actual display / impression.Unit is in seconds|
+|secure|integer|No|Parameter to indicate if Bid Request needs HTTPS encrypted info and markup to ensure data privacy.Value of 0 means it doesn't need. Value of 1 means it needs. If left blank, means unknown, i.e. it doesn't need encryption|
 |bid floor|float|No|Minimum CPM bid price for this display traffic|
 |bidfloorcur|string|No|Bid price currency, currently it only supports USD|
 
@@ -210,9 +207,9 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 
 ### 4.1.2 native object
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
-|request|string|Yes|Request must follow Native ad specification. <br>Refer to **native request object** for details|
+|request|string|Yes|Request must follow Native ad specification. Refer to **native request object** for details|
 |ver|string|Yes|Use Dynamic Native Ads API version, default version is 1.2|
 |api|integer array|No|Supported API frame of the display. Section **5.4 API frame** is the reference of its enumerated values. Default setting of this parameter is that it doesn't support any enumerated value, unless specified|
 |battr|integer array|No|Restrictions of material attributes. Section **5.3 Creative attribute list** is the reference of its enumerated values|
@@ -232,14 +229,14 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 
 ### 4.1.4 asset request object 
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |id|integer|Yes|The only identification ID of the object|
 |required|integer|Yes|Indicate if the asset object is a must-have for client (bidder) in order to get a bid accepted. Value of 1 means yes. Value of 0 means it is not necessary|
-|title|object|No|Title object for title assets. <br>Refer to **title object**|
-|img|object|No|Image object for image assets. <br>Refer to **img object**|
-|video|object|No|Video object for video assets. <br>Refer to **video object**|
-|data|object|No|Data object for data assets, eg. brand, description, rating, pricing etc.<br>Refer to **data object**|
+|title|object|No|Title object for title assets. Refer to **title object**|
+|img|object|No|Image object for image assets. Refer to **img object**|
+|video|object|No|Video object for video assets. Refer to **video object**|
+|data|object|No|Data object for data assets, eg. brand, description, rating, pricing etc.Refer to **data object**|
 
  
 
@@ -247,19 +244,19 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 
 |**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
-|len|integer|Yes|Maximum title text length. <br>Recommended text length is 25, 90, 140 characters|
+|len|integer|Yes|Maximum title text length. Recommended text length is 25, 90, 140 characters|
 
 ****
 
 ### 4.1.6 img object 
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
-|type|integer|Yes|Indicate the specific type of image. <br>Icon image: Value = 1 <br>Large image: Value = 3|
+|type|integer|Yes|Indicate the specific type of image. Icon image: Value = 1 Large image: Value = 3|
 |w|integer|No|Image width|
-|wmin|integer|Yes|Minimum image width. <br>Unit is in pixels|
+|wmin|integer|Yes|Minimum image width. Unit is in pixels|
 |h|integer|No|Image height / length|
-|hmin|integer|Yes|Minimum image height / length. <br>Unit is in pixels|
+|hmin|integer|Yes|Minimum image height / length. Unit is in pixels|
 |mimes|string array|No|Supported image mime-type, including but not limited to ‘image/jpg’and ‘image/gif’|
 
 ****
@@ -269,9 +266,9 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |mimes|string array|Yes|Supported content mime-type. Currently it only supports ‘video/mp4’|
-|minduration|integer|Yes|Minimum video ad length. <br>Unit is in seconds|
-|maxduration|integer|Yes|Maximum video ad length. <br>Unit is in seconds|
-|protocols|integer array|Yes|Applicable video protocol for Publisher in Bid Response. <br>Currently it only supports type 3, i.e. vast 3.0 protocol|
+|minduration|integer|Yes|Minimum video ad length. Unit is in seconds|
+|maxduration|integer|Yes|Maximum video ad length. Unit is in seconds|
+|protocols|integer array|Yes|Applicable video protocol for Publisher in Bid Response. Currently it only supports type 3, i.e. vast 3.0 protocol|
 
 ****
 
@@ -292,9 +289,9 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |name|string|No|Internal definition of app name|
 |bundle|string|Yes|App package name info|
 |domain|string|No|App domain name, eg. mygame.foo.com|
-|cat|string array|No|App IAB category.<br>Section **5.1 IAB category** is the reference of its enumerated values|
+|cat|string array|No|App IAB category.Section **5.1 IAB category** is the reference of its enumerated values|
 |ver|string|No|App version|
-|publisher|object|Yes|Publisher info.<br>Refer to **publisher object**|
+|publisher|object|Yes|Publisher info.Refer to **publisher object**|
 
  
 
@@ -305,7 +302,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |id|string|Yes|Publisher ID, to apply for token info|
 |name|string|No|Publisher name|
 |domain|string|No|Publisher's highest domain name, eg. ‘publisher.com’|
-|cat|string array|No|App IAB category. <br>Section **5.1 IAB category** is the reference of its enumerated values|
+|cat|string array|No|App IAB category. Section **5.1 IAB category** is the reference of its enumerated values|
 
 ****
 
@@ -315,7 +312,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |ua|string|No|User-Agent field in HTTP request thread of user device|
 |ip|string|Yes|ipv4 address of user's current network|
-|geo|object|No|Current geographic info of user. <br>Refer to **geo object**|
+|geo|object|No|Current geographic info of user. Refer to **geo object**|
 |didsha1|string|No|Hardware device ID (eg. IMEI), via SHA1 hash|
 |didmd5|string|No|Hardware device ID (eg. IMEI), via MD5 hash|
 |dpidsha1|string|No|Platform device ID (eg. Android ID), via SHA1 hash|
@@ -327,15 +324,15 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |os|string|Yes|Operation system (eg. Android, iOS)|
 |osv|string|No|Operation system version|
 |language|string|No|Device language, following ISO-639-1-alpha-2. If unknown, put ‘unknown’|
-|connectiontype|integer|No|Network connection mode. <br>Section **5.8 Network Connection Mode** is the reference of its enumerated values|
-|devicetype|integer|No|Device type. <br>Section **5.7 Device type** is the reference of its enumerated values|
-|h|integer|No|Screen physical height / length.<br>Unit is in pixels|
-|w|integer|No|Screen physical width.<br>Unit is in pixels|
-|js|integer|No|Indicate if js is supported. <br>Value of 0 means not supported. Value of 1 means supported.|
-|ppi|integer|No|Screen size.<br>Unit is in pixel per inch|
-|dnt|integer|No|‘Do Not Track’ identification set by browser in HTTP thread. <br>Value of 0 means tracking is not restricted. Value of 1 means tracking is restricted / not allowed. |
+|connectiontype|integer|No|Network connection mode. Section **5.8 Network Connection Mode** is the reference of its enumerated values|
+|devicetype|integer|No|Device type. Section **5.7 Device type** is the reference of its enumerated values|
+|h|integer|No|Screen physical height / length.Unit is in pixels|
+|w|integer|No|Screen physical width.Unit is in pixels|
+|js|integer|No|Indicate if js is supported. Value of 0 means not supported. Value of 1 means supported.|
+|ppi|integer|No|Screen size.Unit is in pixel per inch|
+|dnt|integer|No|‘Do Not Track’ identification set by browser in HTTP thread. Value of 0 means tracking is not restricted. Value of 1 means tracking is restricted / not allowed. |
 |lmt|integer|No|Indicate user's authorization for ad tracking. Value of 0 means tracking is not restricted. Value of 1 means tracking is restricted / not allowed.|
-|ifa|string|Yes|Identification used by client.<br>Andorid: gaid, iOS: idfa|
+|ifa|string|Yes|Identification used by client.Andorid: gaid, iOS: idfa|
 |mccmnc|string|No|Mobile network carrier|
 
 ****
@@ -346,11 +343,11 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |lat|float|No|Latitude info, data range is (-90.0,+90.0). Negative value means South|
 |lon|float|No|Longitude info, data range is (-180.0,+180.0). Negative value means West.|
-|type|integer|No|Source type of geo info. Value of 1 means by GPS/Location service. Value of 2 means by IP address. Value of 3 means provided by user.<br>Section **5.13 Location Type**is the reference of its enumerated values|
+|type|integer|No|Source type of geo info. Value of 1 means by GPS/Location service. Value of 2 means by IP address. Value of 3 means provided by user.Section **5.13 Location Type**is the reference of its enumerated values|
 |accuracy|integer|No|Accuracy in meters. When latitude/longitude info is obtained by GPS/Location service, this field is reported.|
-|ipservice|integer|No|IP address provider, applicable for type = 2.<br>Section **5.14 IP Location Type**is the reference of its enumerated values|
+|ipservice|integer|No|IP address provider, applicable for type = 2.Section **5.14 IP Location Type**is the reference of its enumerated values|
 |country|string|No|Country code following ISO-3166-1-alpha-2|
-|region|string|No|Region code following ISO-3166-2.<br>If country is USA, 2-letter state code is used|
+|region|string|No|Region code following ISO-3166-2.If country is USA, 2-letter state code is used|
 |city|string|No|City code following UN/LOCODE|
 |zip|string|No|Postal code|
 |utcoffset|integer|No|Local time difference from UTC time, +/- in minutes |
@@ -368,7 +365,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |yob|integer|No|Year of birth, 4-digit number.|
 |keywords|string|No|Keywords list of user's interests / intentions list, separated by comma (,)|
 |customdata|string|No|Customized data|
-|data<br> |object array|No|Extra user data. Each data object represents a different data source|
+|data |object array|No|Extra user data. Each data object represents a different data source|
 
 ****
 
@@ -378,7 +375,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |id|string|No|ID of data provider|
 |name|string|No|Name of data provider|
-|segment|object array|No|Data segment that includes the actual data info.<br>Refer to **segment object**|
+|segment|object array|No|Data segment that includes the actual data info.Refer to **segment object**|
 
 ****
 
@@ -406,7 +403,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 
 Midas only supports 1 seatbid object to be responded at a time, and 1 seatbid only supports 1 bid to be responded.
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter****name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |bid|object array|Yes|Array that includes at least 1 bid object. Each object is related to 1 display / impression|
 |seat|string|No|Seat identification that represents the client (bidder, eg. advertiser, agency) on whose behalf this bid is made|
@@ -426,21 +423,21 @@ Each bid object must have a corresponding imp id, indicating the bid is offered 
 |price|float|Yes|CPM price for each display|
 |adid|string|No|Preloaded ad ID that can be used when a bid offer wins|
 |nurl|string|Yes|Nurl link for notification when a bid wins, and will then be used by transaction platform |
-|adm|string|Yes|Convey ad content.<br><br>Native ad uses adm field to return ad content. Refer to **native ad response** below for more details<br><br>Video ad uses adm field to return ad content in vast format. Refer to **vast video response** below for more details|
+|adm|string|Yes|Convey ad content.Native ad uses adm field to return ad content. Refer to **native ad response** below for more detailsVideo ad uses adm field to return ad content in vast format. Refer to **vast video response** below for more details|
 |adomain|string array|No|Domain name of client, used for filtering check|
-|bundle|string|Yes for install ads|App package name, eg. <br>Android package name: com.foo.mygame, <br>iOS package name: id907394059|
+|bundle|string|Yes for install ads|App package name, eg. Android package name: com.foo.mygame, iOS package name: id907394059|
 |iurl|string|No|Image link to indicate ad campaign content, used for quality or security tracking|
 |cid|string|No|Campaign ID, to assist with ad QC. Each cid has one set of creatives, which is the creatives represented by iurl|
 |crid|string|No|ID of a set of creatives, to assist with ad QC|
-|cat|string array|Yes|IAB category of creative.<br>Section **5.1 IAB category** is the reference of its enumerated values|
-|attr|integer array|No|Attribute array to describe creative.<br>Section **5.3 Creative attribute list** is the reference of its enumerated values|
+|cat|string array|Yes|IAB category of creative.Section **5.1 IAB category** is the reference of its enumerated values|
+|attr|integer array|No|Attribute array to describe creative.Section **5.3 Creative attribute list** is the reference of its enumerated values|
 |api|integer|No|Supported API frame of the display. Section **5.4 API frame** is the reference of its enumerated values|
 |protocol|integer|No|Supported video Bid Response protocol. Section **5.6 Video bid response protocol** is the reference of its enumerated values|
-|qagmediarating|integer|Yes|Indicate rating of creative content following IQG standard.<br>Section **5.9 IQG media rating** is the reference of its enumerated values |
+|qagmediarating|integer|Yes|Indicate rating of creative content following IQG standard.Section **5.9 IQG media rating** is the reference of its enumerated values |
 |dealid|string|No|Refer to deal.id****from the bid request if this bid pertains to a private marketplace direct deal|
 |w|integer|No|Creative width. Unit is in pixels|
 |h|integer|No|Creative height. Unit is in pixels|
-|exp|integer|No|Duration that the bidder is willing to wait between the auction and the actual display / impression.<br>Unit is in seconds, with default value of 3600|
+|exp|integer|No|Duration that the bidder is willing to wait between the auction and the actual display / impression.Unit is in seconds, with default value of 3600|
 |ext|object|No|Placeholder for bidder-specific extensions to OpenRTB|
 
  
@@ -456,9 +453,9 @@ Native object has following attributes:
 |**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |ver|string|No|Native Markup version in use|
-|assets|array of objects|Yes|List of native ad's assets.<br>Refer to **asset response object**|
-|link|object|Yes|Destination link if the ad is clicked.<br>Refer to **link object**|
-|imptrackers|array of string|Yes|Array of impression tracking URLs.<br>When a display / impression happens, tracking URLs are reported and used as the reference for cost calculation |
+|assets|array of objects|Yes|List of native ad's assets.Refer to **asset response object**|
+|link|object|Yes|Destination link if the ad is clicked.Refer to **link object**|
+|imptrackers|array of string|Yes|Array of impression tracking URLs.When a display / impression happens, tracking URLs are reported and used as the reference for cost calculation |
 |ext|Object|No|Placeholder that may contain custom JSON|
 
  
@@ -467,20 +464,20 @@ Native object has following attributes:
 
 Asset response object must strictly follow asset object in the Bid Request. Each object corresponds to an ID, which matches with the asset request object ID.
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |id|int|Yes|Asset ID that matches with ID in Bid Request|
 |required|int|No|Set to 1 if asset is required (bidder requires it to be displayed)|
-|title|object|No|Title object for title assets. <br>Refer to **title object**|
-|img|object|No|Image object for image assets. <br>Refer to **img object**|
-|video|object|No|Video object for video assets. <br>Refer to **video object**|
-|data|object|No|Data object for data assets, eg. rating, pricing.<br>Refer to **data object**|
+|title|object|No|Title object for title assets. Refer to **title object**|
+|img|object|No|Image object for image assets. Refer to **img object**|
+|video|object|No|Video object for video assets. Refer to **video object**|
+|data|object|No|Data object for data assets, eg. rating, pricing.Refer to **data object**|
 |ext|object|No|Placeholder that may contain custom JSON|
 
 ### 
 ### 4.2.5 title object
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |text|string|Yes|Title text|
 |len|integer|No|Length of title text|
@@ -490,9 +487,9 @@ Asset response object must strictly follow asset object in the Bid Request. Each
 
 ### 4.2.6 Img object
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter****name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
-|type|integer|No|Required for assetsurl or dcourl responses, not required for embedded asset responses<br>Icon image: Value = 1 <br>Large image: Value = 3|
+|type|integer|No|Required for assetsurl or dcourl responses, not required for embedded asset responsesIcon image: Value = 1 Large image: Value = 3|
 |url|string|Yes|URL of the image asset|
 |w|integer|Yes|Image width in pixels|
 |h|integer|Yes|Image height in pixels|
@@ -502,7 +499,7 @@ Asset response object must strictly follow asset object in the Bid Request. Each
 
 ### 4.2.7 data object
 
-|**Parameter**<br>**name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |type|integer|No|Type ID of data element, must follow **5.12 Data Asset Type**if to be submitted|
 |label|string|No|Name of data element, must follow **5.12 Data Asset Type**if to be submitted|
@@ -528,7 +525,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 |**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|:----|:----|:----|:----|
 |url|string|Yes|Landing URL of the clickable link|
-|clicktrackers|array of strings|No|List of third-party tracker URLs to<br>be fired on click of the URL|
+|clicktrackers|array of strings|No|List of third-party tracker URLs tobe fired on click of the URL|
 |ext|object|No|Placeholder that may contain custom JSON|
 
 # 
@@ -916,7 +913,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 |IAB23-8|Judaism|
 |IAB23-9|Latter-Day Saints|
 |IAB23-10|Pagan/Wiccan|
-|**IAB24**<br>**IAB25**|**Uncategorized**<br>**Non-Standard Content**|
+|**IAB24****IAB25**|**Uncategorized****Non-Standard Content**|
 |IAB25-1|Unmoderated UGC|
 |IAB25-2|Extreme Graphic/Explicit Violence|
 |IAB25-3|Pornography|
@@ -1050,10 +1047,10 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 ## 5.10 Context Type IDs
 
 |**Value**|**Description**|
-|:----|:----|:----|:----|
-|1|Content-centric context such as newsfeed, article, image gallery, video <br>gallery, or similar|
+|:----|:----|
+|1|Content-centric context such as newsfeed, article, image gallery, video gallery, or similar|
 |2|Social-centric context such as social network feed, email, chat, or similar.|
-|3|Product context such as product listings, details, recommendations, <br>reviews, or similar.|
+|3|Product context such as product listings, details, recommendations, reviews, or similar.|
 
  
 
@@ -1062,7 +1059,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 |**Value**|**Description**|
 |:----|:----|:----|:----|
 |10|General or mixed content.|
-|11|Primarily article content (which of course could include images, etc <br>as part of the article)|
+|11|Primarily article content (which of course could include images, etc as part of the article)|
 |12|Primarily video content|
 |13|Primarily audio content|
 |14|Primarily image content|
@@ -1128,6 +1125,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
     "bidfloorcur": "USD",
     "native": {
       "request": "{\"assets\":[{\"required\":1,\"img\":{\"type\":1,\"wmin\":84,\"hmin\":84}}],\"ver\": \"1.2\"}",
+      "ver": "1.2"
     },
     "instl": 0
   }],
@@ -1158,6 +1156,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
     "bidfloorcur": "USD",
     "native": {
       "request": "{\"assets\":[{\"required\":1,\"img\":{\"type\":3,\"wmin\":600,\"hmin\":314}}],\"ver\": \"1.2\"}",
+       "ver": "1.2"
     },
     "instl": 0
   }],
@@ -1188,7 +1187,8 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
     "bidfloorcur": "USD",
     "secure": 0,
     "native": {
-      "request": "{\"assets\":[{\"id\":1,\"required\":1,\"title\":{\"len \":100}},{\"id\":2,\"required \":0,\"data \":{\"type \":2,\"len \":100}},{\"id\":3,\"required \":0,\"img \":{\"type \":3}},{\"id \":4,\"required \":1,\"img \":{\"type\":1}},{\"id \":5,\"required \":0,\"img\":{\"type \":1}},{\"id\":6,\"required\":0,\"data\":{\"type \":12,\"len \":100}},{\"id\":7,\"required\":1,\"video\":{\"mimes\":[\"video/mp4\"],\"maxduration\":30,\"protocols\":[3],\"w\":1280,\"h\":720,\"linearity\":1,\"skip\":0,\"battr\":[16],\"maxbitrate\":2000,\"delivery\":[2],\"companionad\":[{\"w\":1280,\"h\":720,\"id\":\"1\",\"btype\":[1,2,4],\"battr\":[16],\"pos\":7,\"mimes\":[\"application/javascript\"],\"ext\":{\"orientation\":1}}]}}], \"ver\": \"1.2\"}"
+      "request": "{\"assets\":[{\"id\":1,\"required\":1,\"title\":{\"len \":100}},{\"id\":2,\"required \":0,\"data \":{\"type \":2,\"len \":100}},{\"id\":3,\"required \":0,\"img \":{\"type \":3}},{\"id \":4,\"required \":1,\"img \":{\"type\":1}},{\"id \":5,\"required \":0,\"img\":{\"type \":1}},{\"id\":6,\"required\":0,\"data\":{\"type \":12,\"len \":100}},{\"id\":7,\"required\":1,\"video\":{\"mimes\":[\"video/mp4\"],\"maxduration\":30,\"protocols\":[3],\"w\":1280,\"h\":720,\"linearity\":1,\"skip\":0,\"battr\":[16],\"maxbitrate\":2000,\"delivery\":[2],\"companionad\":[{\"w\":1280,\"h\":720,\"id\":\"1\",\"btype\":[1,2,4],\"battr\":[16],\"pos\":7,\"mimes\":[\"application/javascript\"],\"ext\":{\"orientation\":1}}]}}], \"ver\": \"1.2\"}",
+        "ver": "1.2"
     }
   }],
  
@@ -1224,8 +1224,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 }
 ```
 
-# 
-# **RTB****R****esponse Ex****ampl****e**
+# RTB Response Example
 
 ## 2a) native icon image response example
 
