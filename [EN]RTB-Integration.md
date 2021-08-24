@@ -487,7 +487,7 @@ Asset response object must strictly follow asset object in the Bid Request. Each
 
 ### 4.2.6 Img object
 
-|**Parameter****name**|**Type**|**Required?**|**Description**|
+|**Parameter name**|**Type**|**Required?**|**Description**|
 |:----|:----|:----|:----|
 |type|integer|No|Required for assetsurl or dcourl responses, not required for embedded asset responsesIcon image: Value = 1 Large image: Value = 3|
 |url|string|Yes|URL of the image asset|
