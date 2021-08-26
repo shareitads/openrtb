@@ -110,6 +110,8 @@ RTB Request示例
 
 1c) native video request示例
 
+1d) banner request示例
+
 RTB Response 示例
 
 2a) native icon image response示例
@@ -117,6 +119,8 @@ RTB Response 示例
 2b) native large image response示例
 
 2c) native video response示例
+
+2d) banner response示例
 
 
 
