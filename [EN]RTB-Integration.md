@@ -1294,7 +1294,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
       "adid":"100766"
     }]
   }],
-  "cur": "USD"
+  "cur":"USD"
 }
 ```
 ## 2b) native large image response example
@@ -1314,7 +1314,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
       "bundle":"com.janel.doctor.ear"
      }]
    }],
-   "cur": "USD"
+   "cur":"USD"
 }
 ```
 ## 2c) native video response example
