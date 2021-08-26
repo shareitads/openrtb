@@ -110,13 +110,17 @@ RTB Request Example 
 
 ​	1c) native video image request example
 
+​    1d) banner request example
+
 RTB Response Example
 
-​	2a) native icon image request example 
+​	2a) native icon image response example 
 
-​	2b) native large image request example
+​	2b) native large image response example
 
-​	2c) native video image request example
+​	2c) native video image response example
+
+​    2d) banner response example
 
 
 
@@ -1240,7 +1244,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 }
 ```
 
-## 1d）banner reqquest example
+## 1d）banner request example
 ```json
 {
     "id": "123",
