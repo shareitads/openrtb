@@ -1133,17 +1133,17 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
 
 ```json
 {
-  "id": "123",
+  "id":"123",
   "imp": [{
-    "id": "1",
-    "tagid": "2049",
-    "bidfloor": 0.01,
-    "bidfloorcur": "USD",
+    "id":"1",
+    "tagid":"2049",
+    "bidfloor":0.01,
+    "bidfloorcur":"USD",
     "native": {
-      "request": "{\"assets\":[{\"required\":1,\"img\":{\"type\":1,\"wmin\":84,\"hmin\":84}}],\"ver\": \"1.2\"}",
+      "request":"{\"assets\":[{\"required\":1,\"img\":{\"type\":1,\"wmin\":84,\"hmin\":84}}],\"ver\": \"1.2\"}",
       "ver": "1.2"
     },
-    "instl": 0
+    "instl":0
   }],
   "app": {
     "storeurl": "",
