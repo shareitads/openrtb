@@ -25,7 +25,7 @@
     "device": {
         "ip": "1.1.1.1",
         "geo": {
-            "country": "ID"
+            "country": "IND"
         },
         "connectiontype": 7
     }
