@@ -395,7 +395,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |type|integer|否|位置信息的源；值为 1 表示 GPS/定位服务；值为 2 表示 IP 地 址； 值为 3 表示用户提供,枚举值参考 5.13 Location Type|
 |accuracy|integer|否|精度，详细到米；当经纬度是通过定位服务获取时，上报该字段；|
 |ipservice|integer|否|ip服务提供者，适用于type = 2;枚举值参考 5.14 IP Location Services|
-|country|string|否|Country code using ISO-3166-1-alpha-2.|
+|country|string|否|Country code using ISO-3166-1-alpha-3.|
 |region|string|否|Region code using ISO-3166-2; 2-letter state code if USA|
 |city|string|否|使用联合国贸易运输代码的城市位置。参见附录代码链接|
 |zip|string|否|邮政编码|
