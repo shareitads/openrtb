@@ -366,7 +366,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |type|integer|No|Source type of geo info. Value of 1 means by GPS/Location service. Value of 2 means by IP address. Value of 3 means provided by user.Section **5.13 Location Type**is the reference of its enumerated values|
 |accuracy|integer|No|Accuracy in meters. When latitude/longitude info is obtained by GPS/Location service, this field is reported.|
 |ipservice|integer|No|IP address provider, applicable for type = 2.Section **5.14 IP Location Type **is the reference of its enumerated values|
-|country|string|No|Country code following ISO-3166-1-alpha-2|
+|country|string|No|Country code following ISO-3166-1-alpha-3|
 |region|string|No|Region code following ISO-3166-2.If country is USA, 2-letter state code is used|
 |city|string|No|City code following UN/LOCODE|
 |zip|string|No|Postal code|
