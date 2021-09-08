@@ -1159,7 +1159,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
   "device": {
     "ip":"1.1.1.1",
     "geo": {
-      "country":"ID"
+      "country":"IDN"
     }
   }
 }
@@ -1190,7 +1190,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
   "device":{
     "ip":"1.1.1.1",
     "geo":{
-      "country":"ID"
+      "country":"IDN"
     }
   }
 }
@@ -1222,7 +1222,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
   "device": {
     "ip":"1.1.1.1",
     "geo": {
-      "country":"IN",
+      "country":"IDN",
       "type":2
     },
     "devicetype":4,
@@ -1271,7 +1271,7 @@ Note: Video in native ad response is just one type of assets. Therefore, it does
     "device": {
         "ip": "1.1.1.1",
         "geo": {
-            "country": "ID"
+            "country": "IDN"
         },
         "connectiontype": 7
     }
