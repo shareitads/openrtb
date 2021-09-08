@@ -1219,7 +1219,7 @@ Native object字段结构如下：
 
     "geo": {
 
-      "country": "ID"
+      "country": "IDN"
 
     }
 
@@ -1330,7 +1330,7 @@ Native object字段结构如下：
 
     "geo": {
 
-      "country": "IN",
+      "country": "IND",
 
       "type": 2
 
