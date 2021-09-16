@@ -233,7 +233,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |exp|integer|否|竞价到展示的时长 , 单位秒|
 |secure|integer|否|标识展示请求是否需要使用 HTTPS 加密物料信息以及 markup 以保证安全， 0标识不需要使用安全链路， 1标识需要使用安全链路， 如果不填充，则表示未知， 可以认为是不需要使用安全链路；|
 |bid floor|float|否|本次展示的最低 cpm 竞拍价格|
-|bidfloorcur|string|否|竞价货币单位；当前仅支持USD|
+|bidfloorcur|string|是|竞价货币单位；当前仅支持USD|
 
  
 
