@@ -209,7 +209,7 @@ Midas defines the valid duration (in seconds) between the bid / auction and the 
 |exp|integer|No|Duration that may elapse between the auction and the actual display / impression.Unit is in seconds|
 |secure|integer|No|Parameter to indicate if Bid Request needs HTTPS encrypted info and markup to ensure data privacy.Value of 0 means it doesn't need. Value of 1 means it needs. If left blank, means unknown, i.e. it doesn't need encryption|
 |bid floor|float|No|Minimum CPM bid price for this display traffic|
-|bidfloorcur|string|No|Bid price currency, currently it only supports USD|
+|bidfloorcur|string|Yes|Bid price currency, currently it only supports USD|
 
  
 
