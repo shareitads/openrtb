@@ -165,11 +165,17 @@ Publisher接入Midas包括以下步骤：
 
 
 
+
+
+
 ## 3.2 HTTP请求
 
 	在发起竞价请求的时候需要使用HTTP POST方式，因为它比HTTP GET可以附带更多的内容，并且也更容易支持二进制数据。
 
  
+
+
+
 
 
 
@@ -196,7 +202,9 @@ Publisher接入Midas包括以下步骤：
 
 ## 3.4 展示统计和计费
 
-计费依据的展示数量以burl链接统计上报的数据为准。Publisher需保证一次广告最多只上报一次展示；同时保证上报的展示在Midas要求的展示延迟有效时间范围内。
+计费依据的展示数量以竞价胜出时回调的winnotice（默认winnotice在nurl中，publisher若不支持nurl，则在burl中）链接统计上报的数据为准，所以在竞价胜出时需要替换winnoticeurl中的{AUCTION_PRICE}宏。
+
+Publisher需保证一次广告最多只上报一次展示；同时保证上报的展示在Midas要求的展示延迟有效时间范围内。
 
  
 
@@ -225,7 +233,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |**参数名称**|**类型**|**是否必传**|**描述**|
 |:----|:----|:----|:----|
 |id|string|是|请求中唯一标识本次出售展示的标识；每次请求仅出售一个展示|
-|tagid|string|是|固定广告位唯一标识|
+|tagid|string|否|固定广告位唯一标识|
 |native|object |Native流量必传|见 native object， 目前仅支持native|
 |banner|object|Banner流量必传|见 banner object|
 |video|object|Video流量必传|见 video object|
