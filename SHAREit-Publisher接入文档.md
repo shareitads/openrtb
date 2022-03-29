@@ -168,11 +168,19 @@ Publisher接入Midas包括以下步骤：
 
 
 
+
+
+
+
 ## 3.2 HTTP请求
 
 	在发起竞价请求的时候需要使用HTTP POST方式，因为它比HTTP GET可以附带更多的内容，并且也更容易支持二进制数据。
 
  
+
+
+
+
 
 
 
@@ -242,6 +250,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |secure|integer|否|标识展示请求是否需要使用 HTTPS 加密物料信息以及 markup 以保证安全， 0标识不需要使用安全链路， 1标识需要使用安全链路， 如果不填充，则表示未知， 可以认为是不需要使用安全链路；|
 |bid floor|float|否|本次展示的最低 cpm 竞拍价格|
 |bidfloorcur|string|是|竞价货币单位；当前仅支持USD|
+|ext|object|否|扩展字段，见4.1.17|
 
  
 
@@ -442,7 +451,13 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |name|string|否|数据提供方定义的数据段名称|
 |value|string|否|数据值|
 
- 
+
+ ### 4.1.17 imp.ext object
+|**参数名称**|**类型**|**是否必传**|**描述**|
+|:----|:----|:----|:----|
+|ad_count|integer|否|本次曝光机会期望响应的广告个数。默认值为1|
+
+
 
 ## 4.2 Bid Response
 
