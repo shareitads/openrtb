@@ -241,7 +241,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |**参数名称**|**类型**|**是否必传**|**描述**|
 |:----|:----|:----|:----|
 |id|string|是|请求中唯一标识本次出售展示的标识；每次请求仅出售一个展示|
-|tagid|string|否|固定广告位唯一标识|
+|tagid|string|是|固定广告位唯一标识|
 |native|object |Native流量必传|见 native object， 目前仅支持native|
 |banner|object|Banner流量必传|见 banner object|
 |video|object|Video流量必传|见 video object|
@@ -376,7 +376,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 
 |**参数名称**|**类型**|**是否必传**|**描述**|
 |:----|:----|:----|:----|
-|ua|string|否|用户设备 HTTP 请求头中的 User-Agent 字段；|
+|ua|string|是|用户设备 HTTP 请求头中的 User-Agent 字段；|
 |ip|string|是|用户当前网络的ipv4地址|
 |geo|object|否|用户当前的地理位置信息，详见 geo object|
 |didsha1|string|否|硬件设备ID(例如，IMEI);通过SHA1散列。|
@@ -412,7 +412,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |type|integer|否|位置信息的源；值为 1 表示 GPS/定位服务；值为 2 表示 IP 地 址； 值为 3 表示用户提供,枚举值参考 5.13 Location Type|
 |accuracy|integer|否|精度，详细到米；当经纬度是通过定位服务获取时，上报该字段；|
 |ipservice|integer|否|ip服务提供者，适用于type = 2;枚举值参考 5.14 IP Location Services|
-|country|string|否|Country code using ISO-3166-1-alpha-3.|
+|country|string|是|Country code using ISO-3166-1-alpha-3.|
 |region|string|否|Region code using ISO-3166-2; 2-letter state code if USA|
 |city|string|否|使用联合国贸易运输代码的城市位置。参见附录代码链接|
 |zip|string|否|邮政编码|
