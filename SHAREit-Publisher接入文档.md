@@ -238,7 +238,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 
 
 ## 3.5  注意事项
-请求体中以下字段若未填，Midas平台将视为无效请求不做填充：
+请求体中以下字段若为空，Midas平台将视为无效请求不做填充：
 - bid.imp[].tagid： Publisher的广告位标识
 
 - bid.app.bundle：流量来源的包名信息
