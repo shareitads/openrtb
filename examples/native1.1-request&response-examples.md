@@ -4,7 +4,7 @@
     "id": "123",
     "imp": [{
         "id": "1",
-        "tagid": "2049",
+        "tagid": "2049-abc-efg",
         "bidfloor": 0.01,
         "bidfloorcur": "USD",
         "native": {
@@ -13,19 +13,37 @@
         },
         "instl": 0
     }],
-    "app": {
-        "storeurl": "",
-        "ver": "8888888",
-        "publisher": {
-            "id": "de30a0c4-ed1c-42bd-a5ff-af65852ef34a"
-        }
-    },
-    "device": {
-        "ip": "1.1.1.1",
-        "geo": {
-            "country": "IND"
-        }
-    }
+	"app": {
+
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
+	"at": 1,
+	"tmax": 2000
 }
 ```
 
@@ -60,7 +78,7 @@
     "id": "123",
     "imp": [{
         "id": "1",
-        "tagid": "2049",
+        "tagid": "2049-abd-efg",
         "bidfloor": 0.01,
         "bidfloorcur": "USD",
         "native": {
@@ -69,19 +87,37 @@
         },
         "instl": 0
     }],
-    "app": {
-        "storeurl": "",
-        "ver": "8888888",
-        "publisher": {
-            "id": "de30a0c4-ed1c-42bd-a5ff-af65852ef34a"
-        }
-    },
-    "device": {
-        "ip": "1.1.1.1",
-        "geo": {
-            "country": "IDN"
-        }
-    }
+	"app": {
+
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
+	"at": 1,
+	"tmax": 2000
 }
 ```
 

@@ -16,6 +16,8 @@
 
 3.4 展示统计和计费
 
+3.5 必填项要求
+
 4 实时竞价RTB接口参数说明
 
 4.1 Bid Request
@@ -172,11 +174,25 @@ Publisher接入Midas包括以下步骤：
 
 
 
+
+
+
+
+
+
+
 ## 3.2 HTTP请求
 
 	在发起竞价请求的时候需要使用HTTP POST方式，因为它比HTTP GET可以附带更多的内容，并且也更容易支持二进制数据。
 
  
+
+
+
+
+
+
+
 
 
 
@@ -218,7 +234,25 @@ Publisher需保证一次广告最多只上报一次展示；同时保证上报�
 
 Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 
- 
+
+
+
+## 3.5  注意事项
+请求体中以下字段若未填，Midas平台将视为无效请求不做填充：
+- bid.imp[].tagid： Publisher的广告位标识
+
+- bid.app.bundle：流量来源的包名信息
+
+- bid.device.ifa： 允许广告主使用的唯一标识， 明文表示；Android 传 gaid，iOS传idfa
+
+- bid.device.ua：用户设备 HTTP 请求头中的 User-Agent 字段
+
+- bid.device.ip：用户当前网络的ip地址
+
+- bid.device.geo.country：用户当前网络的所在国家，使用 ISO-3166-1-alpha-3
+
+  
+
 
 # **4 实时竞价RTB接口参数说明**
 
@@ -241,7 +275,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |**参数名称**|**类型**|**是否必传**|**描述**|
 |:----|:----|:----|:----|
 |id|string|是|请求中唯一标识本次出售展示的标识；每次请求仅出售一个展示|
-|tagid|string|是|固定广告位唯一标识|
+|tagid|string|是|Publisher的广告位标识|
 |native|object |Native流量必传|见 native object， 目前仅支持native|
 |banner|object|Banner流量必传|见 banner object|
 |video|object|Video流量必传|见 video object|
@@ -398,7 +432,7 @@ Midas通过 bidresponse.seatbid.bid.exp 字段限定展示延迟有效时间。
 |ppi|integer|否|屏幕大小，英寸像素|
 |dnt|integer|否|浏览器在 HTTP 头中设置的标准的 “Do NotTrack"标识， 0 表示不限制追踪， 1 表示限制（不允许）追踪；|
 |lmt|integer|否|“限制广告追踪”表示用户对商业追踪行为的授权， 值为 0 表示不限制追踪，值为 1 表示限制追踪；|
-|ifa|string|是|广告主标识， 明文表示；Android 传 gaid，iOS传idfa。|
+|ifa|string|是|允许广告主使用的唯一标识， 明文表示；Android 传 gaid，iOS传idfa。|
 |mccmnc|string|否|移动运营商|
 
 ****
@@ -1198,233 +1232,200 @@ Native object字段结构如下：
 # **RTB Request示例**
 
 ## **1a) native icon image request示例**
-
+```json
 {
+	"id": "32f94228-52d3-4bce-be88-5dd1d799ae4f",
+	"imp": [{
+		"id": "1",
+		"tagid": "100040-1002421",
+		"bidfloor": 1.00,
+		"bidfloorcur": "USD",
+		"secure": 0,
+		"native": {
+			"request": "{\"assets\":[{\"id\":1,\"required\":1,\"title\":{\"len \":100}},{\"id\":2,\"required \":0,\"data \":{\"type \":2,\"len \":100}},{\"id\":3,\"required \":0,\"img \":{\"type \":3}},{\"id \":4,\"required \":1,\"img \":{\"type\":1}},{\"id \":5,\"required \":0,\"img\":{\"type \":1}},{\"id\":6,\"required\":0,\"data\":{\"type \":12,\"len \":100}},{\"id\":7,\"required\":1,\"video\":{\"mimes\":[\"video/mp4\"],\"maxduration\":30,\"protocols\":[3],\"w\":1280,\"h\":720,\"linearity\":1,\"skip\":0,\"battr\":[16],\"maxbitrate\":2000,\"delivery\":[2],\"companionad\":[{\"w\":1280,\"h\":720,\"id\":\"1\",\"btype\":[1,2,4],\"battr\":[16],\"pos\":7,\"mimes\":[\"application/javascript\"],\"ext\":{\"orientation\":1}}]}}], \"ver\": \"1.2\"}"
+		}
+	}],
 
-  "id": "123",
+	"app": {
 
-  "imp": [{
-
-    "id": "1",
-
-    "tagid": "2049",
-
-    "bidfloor": 0.01,
-
-    "bidfloorcur": "USD",
-
-    "native": {
-
-      "request": "{\"assets\":[{\"required\":1,\"img\":{\"type\":1,\"wmin\":84,\"hmin\":84}}]，\"ver\": \"1.2\"}"
-
-    },
-
-    "instl": 0
-
-  }],
-
-  "app": {
-
-    "storeurl": "",
-
-    "ver": "8888888",
-
-    "publisher": {
-
-      "id": "de30a0c4-ed1c-42bd-a5ff-af65852ef34a"
-
-    }
-
-  },
-
-  "device": {
-
-    "ip": "1.1.1.1",
-
-    "geo": {
-
-      "country": "IDN"
-
-    }
-
-  }
-
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
+	"at": 1,
+	"tmax": 2000
 }
+```
 
 ## **1b) native large image request示例**
-
+```json
 {
+	"id": "32f94228-52d3-4bce-be88-5dd1d799ae4f",
+	"imp": [{
+		"id": "1",
+		"tagid": "100040-1002421",
+		"bidfloor": 1.00,
+		"bidfloorcur": "USD",
+		"secure": 0,
+		"native": {
+			"request": "{\"assets\":[{\"required\":1,\"img\":{\"type\":3,\"wmin\":600,\"hmin\":314}}],\"ver\": \"1.2\"}"
+		}
+	}],
 
-  "id": "123",
+	"app": {
 
-  "imp": [{
-
-    "id": "1",
-
-    "tagid": "2049",
-
-    "bidfloor": 0.01,
-
-    "bidfloorcur": "USD",
-
-    "native": {
-
-      "request": "{\"assets\":[{\"required\":1,\"img\":{\"type\":3,\"wmin\":600,\"hmin\":314}}],\"ver\": \"1.2\"}"
-
-    },
-
-    "instl": 0
-
-  }],
-
-  "app": {
-
-    "storeurl": "",
-
-    "ver": "8888888",
-
-    "publisher": {
-
-      "id": "de30a0c4-ed1c-42bd-a5ff-af65852ef34a"
-
-    }
-
-  },
-
-  "device": {
-
-    "ip": "1.1.1.1",
-
-    "geo": {
-
-      "country": "ID"
-
-    }
-
-  }
-
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
+	"at": 1,
+	"tmax": 2000
 }
-
+```
 
 ## **1c) native video request示例**
-
+```json
 {
+	"id": "32f94228-52d3-4bce-be88-5dd1d799ae4f",
+	"imp": [{
+		"id": "1",
+		"tagid": "100040-1002421",
+		"bidfloor": 1.00,
+		"bidfloorcur": "USD",
+		"secure": 0,
+		"native": {
+			"request": "{\"assets\":[{\"id\":1,\"required\":1,\"title\":{\"len \":100}},{\"id\":2,\"required \":0,\"data \":{\"type \":2,\"len \":100}},{\"id\":3,\"required \":0,\"img \":{\"type \":3}},{\"id \":4,\"required \":1,\"img \":{\"type\":1}},{\"id \":5,\"required \":0,\"img\":{\"type \":1}},{\"id\":6,\"required\":0,\"data\":{\"type \":12,\"len \":100}},{\"id\":7,\"required\":1,\"video\":{\"mimes\":[\"video/mp4\"],\"maxduration\":30,\"protocols\":[3],\"w\":1280,\"h\":720,\"linearity\":1,\"skip\":0,\"battr\":[16],\"maxbitrate\":2000,\"delivery\":[2],\"companionad\":[{\"w\":1280,\"h\":720,\"id\":\"1\",\"btype\":[1,2,4],\"battr\":[16],\"pos\":7,\"mimes\":[\"application/javascript\"],\"ext\":{\"orientation\":1}}]}}], \"ver\": \"1.2\"}"
+		}
+	}],
 
-  "id": "32f94228-52d3-4bce-be88-5dd1d799ae4f",
+	"app": {
 
-  "imp": [{
-
-    "id": "1",
-
-    "tagid": "2061",
-
-    "bidfloor": 1.00,
-
-    "bidfloorcur": "USD",
-
-    "secure": 0,
-
-    "native": {
-
-      "request": "{\"assets\":[{\"id\":1,\"required\":1,\"title\":{\"len \":100}},{\"id\":2,\"required \":0,\"data \":{\"type \":2,\"len \":100}},{\"id\":3,\"required \":0,\"img \":{\"type \":3}},{\"id \":4,\"required \":1,\"img \":{\"type\":1}},{\"id \":5,\"required \":0,\"img\":{\"type \":1}},{\"id\":6,\"required\":0,\"data\":{\"type \":12,\"len \":100}},{\"id\":7,\"required\":1,\"video\":{\"mimes\":[\"video/mp4\"],\"maxduration\":30,\"protocols\":[3],\"w\":1280,\"h\":720,\"linearity\":1,\"skip\":0,\"battr\":[16],\"maxbitrate\":2000,\"delivery\":[2],\"companionad\":[{\"w\":1280,\"h\":720,\"id\":\"1\",\"btype\":[1,2,4],\"battr\":[16],\"pos\":7,\"mimes\":[\"application/javascript\"],\"ext\":{\"orientation\":1}}]}}], \"ver\": \"1.2\"}"
-
-	}
-
-}],
-
- 
-
-  "app": {
-
-    "id": "100461",
-
-    "ver": "4050618",
-
-    "publisher": {
-
-      "id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
-
-    }
-
-  },
-
-  "device": {
-
-    "ip": "1.1.1.1",
-
-    "geo": {
-
-      "country": "IND",
-
-      "type": 2
-
-    },
-
-    "devicetype": 4,
-
-    "make": "WIKO",
-
-    "model": "samsung-sm-g900a",
-
-    "os": "android",
-
-    "osv": "5.1.1",
-
-    "language": "en",
-
-    "carrier": "310410",
-
-    "connectiontype": 7,
-
-    "ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
-
-    "didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
-
-    "didmd5": "c98de3c3706ae57c89f97c0778c8121d",
-
-    "dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
-
-    "dpidmd5": "af4935679d392191157f687f48907492"
-
-  },
-
-  "at": 1,
-
-  "tmax": 2000
-
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
+	"at": 1,
+	"tmax": 2000
 }
+```
 
 ## **1d) banner request example**
  ```json
 {
-    "id": "123",
-    "imp": [{
-        "id": "1",
-        "tagid": "2051",
-        "bidfloor": 0.00001,
-        "bidfloorcur": "USD",
-        "banner":{
-            "w":320,
-            "h":50,
-            "mimes": ["image/png", "image/jpg", "image/gif"]
-        },
-        "instl": 0
-    }],
+	"id": "32f94228-52d3-4bce-be88-5dd1d799ae4f",
+	"imp": [{
+		"id": "1",
+		"tagid": "100040-1002421",
+		"bidfloor": 1.00,
+		"bidfloorcur": "USD",
+		"secure": 0,
+		"banner": {
+			"w": 320,
+			"h": 50,
+			"mimes": ["image/png", "image/jpg", "image/gif"]
+		}
+	}],
 
-    "app": {
-        "storeurl": "",
-        "ver": "8888888",
-        "publisher": {
-            "id": "5e33f618-42a0-47f0-b7b1-9ad9866f3b9a"
-        }
-    },
-    "device": {
-        "ip": "1.1.1.1",
-        "geo": {
-            "country": "ID"
-        },
-        "connectiontype": 7
-    }
+	"app": {
+
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
+	"at": 1,
+	"tmax": 2000
 }
 ```
 

@@ -4,7 +4,7 @@
     "id": "32f94228-52d3-4bce-be88-5dd1d799ae4f",
     "imp": [{
         "id": "1",
-        "tagid": "2041",
+        "tagid": "100040-1002421",
         "bidfloor": 0.00001,
         "bidfloorcur": "USD",
         "secure": 0,
@@ -14,32 +14,34 @@
      "instl": 1
     }],
     "app": {
-        "id": "100461",
-        "ver": "4050618",
-        "publisher": {
-            "id": "5e33f618-42a0-47f0-b7b1-9ad9866f3b9a"
-        }
-    },
-    "device": {
-        "ip": "1.1.1.1",
-        "geo": {
-            "country": "IND",
-            "type": 2
-        },
-        "devicetype": 4,
-        "make": "WIKO",
-        "model": "samsung-sm-g900a",
-        "os": "android",
-        "osv": "5.1.1",
-        "language": "en",
-        "carrier": "310410",
-        "connectiontype": 7,
-        "ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
-        "didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
-        "didmd5": "c98de3c3706ae57c89f97c0778c8121d",
-        "dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
-        "dpidmd5": "af4935679d392191157f687f48907492"
-    },
+
+		"id": "100461",
+		"bundle": "com.midastest.ads",
+		"ver": "4050618",
+		"publisher": {
+			"id": "bd8b25d0-413e-4886-9adf-6a796ff47740"
+		}
+	},
+	"device": {
+		"ip": "1.1.1.1",
+		"geo": {
+			"country": "IND",
+			"type": 2    
+		},
+		"devicetype": 4,
+		"make": "WIKO",
+		"model": "samsung-sm-g900a",
+		"os": "android",
+		"osv": "5.1.1",
+		"language": "en",
+		"carrier": "310410",
+		"connectiontype": 7,
+		"ifa": "5731b4c8-7cc1-4a09-bb77-24f237d93a66",
+		"didsha1": "ecae9042f3e549a4fd1af27a1ed38b5f682fa3ca",
+		"didmd5": "c98de3c3706ae57c89f97c0778c8121d",
+		"dpidsha1": "a07713adea29cd23fd10a2e81a4fb07e23e00fb7",
+		"dpidmd5": "af4935679d392191157f687f48907492"  
+	},
     "at": 1,
     "tmax": 2000,
     "debug": 0
