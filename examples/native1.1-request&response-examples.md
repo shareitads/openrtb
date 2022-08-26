@@ -23,11 +23,11 @@
 		}
 	},
 	"device": {
-      "ua": "Mozilla/5.0 (Linux; Android 6.0; vivo Y67 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 Mobile Safari/537.36",
-      "ip": "114.124.182.13",
-      "geo": {
-        "country": "ID"
-      },
+        "ua": "Mozilla/5.0 (Linux; Android 6.0; vivo Y67 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 Mobile Safari/537.36",
+        "ip": "114.124.182.13",
+        "geo": {
+          "country": "ID"
+        },
 		"devicetype": 4,
 		"make": "WIKO",
 		"model": "samsung-sm-g900a",
@@ -99,11 +99,11 @@
 		}
 	},
 	"device": {
-      "ua": "Mozilla/5.0 (Linux; Android 6.0; vivo Y67 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 Mobile Safari/537.36",
-      "ip": "114.124.182.13",
-      "geo": {
-        "country": "ID"
-      },
+        "ua": "Mozilla/5.0 (Linux; Android 6.0; vivo Y67 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 Mobile Safari/537.36",
+        "ip": "114.124.182.13",
+        "geo": {
+            "country": "ID"
+        },
 		"devicetype": 4,
 		"make": "WIKO",
 		"model": "samsung-sm-g900a",
