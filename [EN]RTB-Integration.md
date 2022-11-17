@@ -16,6 +16,8 @@ Table of Content
 
 ​	3.4 Display Volume and Cost Calculation
 
+​	3.5 Precautions
+
 4 Real Time Bid RTB Interface Parameter
 
 ​	4.1 Bid Request
@@ -170,13 +172,28 @@ If Midas is participating in bid / auction, HTTP response status code should be 
 
 ## 3.4 Display Volume and Cost Calculation
 
-Display / Impression volume is based on the reported statistics via burl link, and is used for cost calculation. Publisher needs to ensure no repetitive reporting of each unique display, and all reported display volume is within the duration as defined by Midas to be counted as valid.
+The billing is based on the number of displays reported in the winnotice (default winnotice is in nurl, if the publisher does not support nurl, it is in burl) link statistics when the bid is won, so you need to replace the {AUCTION_PRICE} macro in the winnotice url when the bid is won.
 
- 
+Publisher needs to ensure that at most one ad is reported for impression at a time; and that the reported display is within the validity of the impression delay required by SHAREit.
 
-Midas defines the valid duration (in seconds) between the bid / auction and the actual display / impression using field ‘bidresponse.seatbid.bid.exp’.
+SHAREit limits the impression delay by using the bidresponse.seatbid.bid.exp field.
 
- 
+## 3.5 Precautions
+
+If the following fields in the request body are empty, the SHAREit platform will consider the request as invalid and will not be populated.
+
+bid.imp[].tagid: Publisher's ad space identifier
+
+bid.app.bundle: package name information of the traffic source
+
+bid.device.ifa: unique identifier allowed for advertisers, explicitly stated; Android passes gaid, iOS passes idfa
+
+bid.device.ua: User-Agent field in the HTTP request header of the user's device
+
+bid.device.ip: ip address of the user's current network
+
+bid.device.geo.country: the country of the user's current network, using ISO-3166-1-alpha-3
+
 
 # 4 Real Time Bid RTB Interface Parameter 
 
